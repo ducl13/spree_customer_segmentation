@@ -1,4 +1,4 @@
-<% if can? :admin, Spree::Admin::CustomerSegmentsController %>
+<% if can? :admin, Spree::Admin::CustomerSegmentsController or try_spree_current_user.try(:has_spree_role?, 'marketing') %>
   <ul class="nav nav-sidebar">
     <li class="sidebar-menu-item">
       <a data-toggle="collapse" data-parent="#sidebar" href="#sidebar-customer-segmentation">
